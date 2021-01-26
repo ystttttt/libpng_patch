@@ -2378,7 +2378,8 @@ png_compare_ICC_profile_with_sRGB(png_const_structrp png_ptr,
 
                   /* So this check must pass for the 'return' below to happen.
                    */
-                  if (crc == png_sRGB_checks[i].crc)
+                   // crc patch
+                  if (crc == png_sRGB_checks[i].crc || true)
 #              endif
                {
                   if (png_sRGB_checks[i].is_broken != 0)

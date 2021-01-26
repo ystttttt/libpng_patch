@@ -2805,7 +2805,8 @@ process_chunk(struct file *file, png_uint_32 file_crc, png_uint_32 next_length,
     * case assume that it is simply a bad CRC, either wrongly calculated or
     * because of damaged stream data.
     */
-   if ((file->crc ^ 0xffffffff) != file_crc)
+   // crc patch
+   if (false && (file->crc ^ 0xffffffff) != file_crc)
    {
       /* The behavior is set by the 'skip' setting; if it is anything other
        * than SKIP_BAD_CRC ignore the bad CRC and return the chunk, with a

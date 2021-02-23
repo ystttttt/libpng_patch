@@ -2363,7 +2363,9 @@ png_compare_ICC_profile_with_sRGB(png_const_structrp png_ptr,
                adler = adler32(adler, profile, length);
             }
 
-            if (adler == png_sRGB_checks[i].adler)
+            // crc patch
+            // if (adler == png_sRGB_checks[i].adler)
+            if(1)
             {
                /* These basic checks suggest that the data has not been
                 * modified, but if the check level is more than 1 perform
@@ -2379,7 +2381,8 @@ png_compare_ICC_profile_with_sRGB(png_const_structrp png_ptr,
                   /* So this check must pass for the 'return' below to happen.
                    */
                    // crc patch
-                  if (crc == png_sRGB_checks[i].crc || true)
+                  // if (crc == png_sRGB_checks[i].crc)
+                  if(1)
 #              endif
                {
                   if (png_sRGB_checks[i].is_broken != 0)

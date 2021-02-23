@@ -278,7 +278,7 @@ png_crc_error(png_structrp png_ptr)
    {
       crc = png_get_uint_32(crc_bytes);
       // return ((int)(crc != png_ptr->crc));
-      // crc patch 
+      // crc patch
       return 0;
    }
 
